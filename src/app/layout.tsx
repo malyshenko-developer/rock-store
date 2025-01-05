@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { Header } from "@/components/shared";
 import { darkTheme } from "@/theme/themes";
+import './index.css';
 
 export const metadata: Metadata = {
   title: "Next Rock",

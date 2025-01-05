@@ -1,0 +1,16 @@
+body {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #505050 #2e2e2e; /* Firefox */
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #505050;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #757575;
+}

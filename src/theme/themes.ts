@@ -37,6 +37,9 @@ const darkTheme = createTheme({
         },
         custom: {
             accent: '#56C8D8'
+        },
+        primary: {
+            main: '#56C8D8'
         }
     },
     typography: {
@@ -48,6 +51,30 @@ const darkTheme = createTheme({
         }
     },
     components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    '&::-webkit-scrollbar': {
+                        width: '8px',
+                        height: '8px',
+                    },
+                    '&::-webkit-scrollbar-track': {
+                        backgroundColor: '#2e2e2e',
+                        borderRadius: '4px',
+                    },
+                    '&::-webkit-scrollbar-thumb': {
+                        backgroundColor: '#505050',
+                        borderRadius: '4px',
+                        '&:hover': {
+                            backgroundColor: '#757575',
+                        },
+                    },
+                    '&::-webkit-scrollbar-corner': {
+                        backgroundColor: '#2e2e2e',
+                    },
+                },
+            },
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -130,8 +157,31 @@ const darkTheme = createTheme({
                     },
                 }
             }
-        }
-    }
+        },
+        MuiSwitch: {            
+            styleOverrides: {
+                switchBase: {
+                    '&.Mui-checked': {
+                        color: '#56C8D8',
+                        '& + .MuiSwitch-track': {
+                            backgroundColor: '#E0E0E0',
+                            opacity: 1
+                        }
+                    }
+                },
+                track: {
+                    backgroundColor: '#E0E0E0'
+                }
+            }
+        },
+        MuiSlider: {
+            styleOverrides: {
+                valueLabel: {
+                    backgroundColor: '#2E3246',
+                },
+            },
+        },
+    },
 });
 
 export { darkTheme };
