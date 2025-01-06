@@ -13,7 +13,6 @@ const ProductsCategoryList = (props: Props) => {
     const {
         title,
         products,
-        categoryId,
     } = props;
 
     return (
