@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Categories, Filters, SortPopup, ProductsCategoryList } from "@/components/shared";
 import { Box, Container, Typography } from "@mui/material";
-
 
 const products: any = [
   {
