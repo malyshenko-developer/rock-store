@@ -8,7 +8,7 @@ import FilterGroupCheckbox from './filter-group-checkbox';
 const Filters = () => {
 
     return (
-        <Box width={'330px'} bgcolor={'background.secondary'} p={'15px'} borderRadius={'10px'}>
+        <Box width={'300px'} bgcolor={'background.secondary'} p={'15px'} borderRadius={'10px'}>
             <Typography variant='h6' component={'h3'}>
                 Фильтрация
             </Typography>

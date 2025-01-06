@@ -22,7 +22,7 @@ const Categories = () => {
     }
 
     return (
-        <Box p={'15px'} bgcolor={'background.secondary'} borderRadius={'10px'} display={'inline-flex'} mt={'20px'}>
+        <Box bgcolor={'background.secondary'} borderRadius={'10px'} display={'inline-flex'}>
             <ToggleButtonGroup
                 value={activeCategory}
                 exclusive

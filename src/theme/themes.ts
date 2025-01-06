@@ -75,6 +75,13 @@ const darkTheme = createTheme({
                 },
             },
         },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#232538'
+                }
+            }
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
