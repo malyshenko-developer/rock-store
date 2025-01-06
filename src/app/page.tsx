@@ -2,7 +2,7 @@ import { Categories, Filters, SortPopup, ProductsCategoryList } from "@/componen
 import { Box, Container, Typography } from "@mui/material";
 
 
-const products = [
+const products: any = [
   {
     id: 0,
     name: 'IBANEZ GRG7221QA-TKS',
