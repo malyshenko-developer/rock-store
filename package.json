@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:push": "prisma db push --schema=./src/prisma/schema.prisma",
+    "prisma:studio": "prisma studio --schema=./src/prisma/schema.prisma"
   },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
@@ -15,7 +17,9 @@
     "@mui/icons-material": "^6.1.2",
     "@mui/material": "^6.1.2",
     "@mui/material-nextjs": "^6.1.2",
+    "@prisma/client": "^6.1.0",
     "next": "14.2.13",
+    "prisma": "^6.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-use": "^17.6.0",
