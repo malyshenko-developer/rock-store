@@ -1,37 +1,61 @@
 'use client';
+
+import { useCategoryStore } from '@/store/category';
 import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import { useState } from 'react';
 
 const CATEGORIES = [
-    'Гитары',
-    'Клавишные инструменты',
-    'Укулеле',
-    'Ударные инструменты',
-    'Микрофоны и радиосистемы',
-    'Наушники и гарнитуры'
+    {
+        id: 1,
+        name: 'Гитары',
+    },
+    {
+        id: 2,
+        name: 'Клавишные инструменты',
+    },
+    {
+        id: 3,
+        name: 'Укулеле',
+    },
+    {
+        id: 4,
+        name: 'Ударные инструменты',
+    },
+    {
+        id: 5,
+        name: 'Микрофоны и радиосистемы',
+    },
+    {
+        id: 6,
+        name: 'Наушники и гарнитуры',
+    }
 ]
 
 const Categories = () => {
-    const [ activeCategory, setActiveCategory ] = useState<string | null>(CATEGORIES[0]);
+    const categoryActiveId = useCategoryStore((state) => state.activeId);
+    const setCategoryActiveId = useCategoryStore((state) => state.setActiveId);
 
     const handleChangeCategory = (
         event: React.MouseEvent<HTMLElement>,
         newCategory: string | null,
     ) => {
-        setActiveCategory(newCategory);
+        const category = CATEGORIES.find((category) => category.name === newCategory);
+
+        if (category) {
+            setCategoryActiveId(category.id);
+        }
     }
 
     return (
         <Box bgcolor={'background.secondary'} borderRadius={'10px'} display={'inline-flex'}>
             <ToggleButtonGroup
-                value={activeCategory}
+                value={CATEGORIES[categoryActiveId]}
                 exclusive
                 onChange={handleChangeCategory}
             >
                 {
                     CATEGORIES.map((category, index) => (
-                        <ToggleButton key={index} value={category}>
-                            { category }
+                        <ToggleButton key={index} value={category} href={`/#${category.name}`}>
+                            {category.name}
                         </ToggleButton>
                     ))
                 }

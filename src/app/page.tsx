@@ -2,7 +2,7 @@
 import { Categories, Filters, SortPopup, ProductsCategoryList } from "@/components/shared";
 import { Box, Container, Typography } from "@mui/material";
 
-const products: any = [
+const GUITARS: any = [
   {
     id: 0,
     name: 'IBANEZ GRG7221QA-TKS',
@@ -39,7 +39,34 @@ const products: any = [
     price: 33110,
     imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/5zk/jmc/q7y/18o/ccs/00s/kks/cgw/g/5zkjmcq7y18occs00skkscgwg.jpg',
   },
-]
+];
+
+const KEYBOARDS: any = [
+  {
+    id: 0,
+    name: 'KORG LP-380 WH U',
+    price: 114990,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/c3v/9cr/m36/5ck/sg0/cs0/ssw/s4s/s/c3v9crm365cksg0cs0ssws4ss.jpg',
+  },
+  {
+    id: 1,
+    name: 'Artesia Performer Black',
+    price: 26970,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/73r/lo4/fhs/fwg/sgo/0s0/kws/040/8/73rlo4fhsfwgsgo0s0kws0408.jpg',
+  },
+  {
+    id: 2,
+    name: 'KORG LP-380 RW U',
+    price: 112490,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/8y6/wfs/ogo/2sk/8gw/ck8/cww/ogw/8y6wfsogo2sk8gwck8cwwogw0.jpg',
+  },
+  {
+    id: 3,
+    name: 'YAMAHA PSR-SX900, без адаптера',
+    price: 279990,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/6du/gxn/6ej/b0g/s88/0ok/soo/s0g/c/6dugxn6ejb0gs880oksoos0gc.jpeg',
+  }
+];
 
 
 export default function Home() {
@@ -66,10 +93,18 @@ export default function Home() {
       <Box display={'flex'} gap={'30px'} p={'20px 0'}>
         <Filters />
 
-        <ProductsCategoryList title={'Гитары'}
-          categoryId={1}
-          products={products}
-        />
+        <Box flex={1} display={'flex'} flexDirection={'column'} gap={2}>
+          <ProductsCategoryList title={'Гитары'}
+            categoryId={0}
+            products={GUITARS}
+          />
+
+          <ProductsCategoryList title={'Клавишные инструменты'}
+            categoryId={1}
+            products={KEYBOARDS}
+          />
+        </Box>
+
       </Box>
     </Container>
   </>;
