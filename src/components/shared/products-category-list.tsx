@@ -8,7 +8,6 @@ import ProductCard from './product-card';
 
 import { useIntersection } from 'react-use';
 import { useCategoryStore } from '@/store/category';
-import { stat } from 'fs';
 
 
 interface Props {
@@ -37,12 +36,12 @@ const ProductsCategoryList = (props: Props) => {
             setActiveCategoryId(categoryId);
 
             const newHash = `#${title}`;
-            
+
             if (window.location.hash !== newHash) {
                 window.history.pushState(null, '', newHash);
             }
         }
-    }, [intersection?.isIntersecting])
+    }, [intersection?.isIntersecting, categoryId, setActiveCategoryId])
 
     return (
         <Box id={title} ref={intersectionRef}>
