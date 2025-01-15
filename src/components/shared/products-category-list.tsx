@@ -41,7 +41,7 @@ const ProductsCategoryList = (props: Props) => {
                 window.history.pushState(null, '', newHash);
             }
         }
-    }, [intersection?.isIntersecting, categoryId, setActiveCategoryId])
+    }, [intersection?.isIntersecting, categoryId, setActiveCategoryId, title])
 
     return (
         <Box id={title} ref={intersectionRef}>
