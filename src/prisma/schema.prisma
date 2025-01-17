@@ -14,11 +14,12 @@ model User {
     email    String   @unique
     password String
     role     UserRole @default(USER)
+    verifed  DateTime
 
     provider   String?
     providerId String?
 
-    cart            Cart?
+    cart             Cart?
     orders           Order[]
     verificationCode VerificationCode?
 
@@ -41,6 +42,7 @@ model Product {
 
     name     String
     imageUrl String
+    price    Int
 
     category   Category @relation(fields: [categoryId], references: [id])
     categoryId Int
