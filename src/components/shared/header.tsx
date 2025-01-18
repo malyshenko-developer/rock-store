@@ -2,7 +2,9 @@ import { Box, Button, Container, Typography } from '@mui/material'
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-import Image from 'next/image'
+import Image from 'next/image';
+import SearchInput from './search-input';
+
 
 const Header = () => {
   return (
@@ -19,6 +21,11 @@ const Header = () => {
                     Rock Store
                 </Typography>
             </Box>
+
+            <Box mx={10} flex={1}>
+                <SearchInput />
+            </Box>
+
             <Box display={'flex'} gap={'20px'}>
                 <Button startIcon={<PersonIcon />}>
                     Войти

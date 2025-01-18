@@ -7,6 +7,7 @@ import FilterSlider from "./filter-slider";
 import FilterGroupCheckbox from "./filter-group-checkbox";
 import ProductCard from "./product-card";
 import ProductsCategoryList from './products-category-list';
+import SearchInput from "./search-input";
 
 export {
     Header,
@@ -18,4 +19,5 @@ export {
     FilterGroupCheckbox,
     ProductCard,
     ProductsCategoryList,
+    SearchInput
 };

@@ -102,6 +102,13 @@ const darkTheme = createTheme({
                 }
             }
         },
+        MuiPopper: {
+            styleOverrides: {
+                root: {
+                    zIndex: 31,
+                },
+            },
+        },
         MuiToggleButtonGroup: {
             styleOverrides: {
                 grouped: {
