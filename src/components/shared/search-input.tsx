@@ -34,10 +34,14 @@ const SearchInput = () => {
     }
 
     useDebounce(
-        () => {
-            API.products.search(searchQuery).then(items => {
-                setProducts(items);
-            });
+        async () => {
+            try {
+                const response = await API.products.search(searchQuery);
+
+                setProducts(response);
+            } catch (error) {
+                console.log(error);
+            }
         },
         300,
         [searchQuery]
@@ -113,7 +117,7 @@ const SearchInput = () => {
                             }
 
                             {
-                                products.map(product => (
+                                products.slice(0, 5).map(product => (
                                     <>
                                         <Link
                                             key={product.id}

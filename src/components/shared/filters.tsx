@@ -1,11 +1,30 @@
+'use client';
+
+import React from 'react';
+
+import { useFilters } from '@/hooks/use-filters';
+import { useSyncFiltersWithUrl } from '@/hooks/use-sync-filters-with-url';
+
 import { Box, Typography } from '@mui/material';
 import DiscountIcon from '@mui/icons-material/Discount';
-import React from 'react';
+
 import SwitchFilter from './switch-filter';
 import FilterSlider from './filter-slider';
 import FilterGroupCheckbox from './filter-group-checkbox';
 
+
 const Filters = () => {
+    const { 
+        brands,
+        loadingBrands,
+        toggleBrand,
+        selectedBrands,
+        prices,
+        updateOnePrice,
+        updatePrices
+    } = useFilters();
+
+    useSyncFiltersWithUrl({ prices, selectedBrands });
 
     return (
         <Box width={'300px'} bgcolor={'background.secondary'} p={'15px'} borderRadius={'10px'} alignSelf={'flex-start'}>
@@ -32,54 +51,20 @@ const Filters = () => {
                 <Typography mb={'10px'}>
                     Цена в ₽
                 </Typography>
-                <FilterSlider />
+                <FilterSlider
+                    prices={prices}
+                    handleChangePrices={updatePrices}
+                    handleChangeOnePrice={updateOnePrice}
+                />
             </Box>
             <Box mt={'15px'}>
                 <FilterGroupCheckbox
                     title='Бренды'
                     limit={5}
-                    items={[
-                        {
-                            text: 'IBANEZ',
-                            value: 1
-                        },
-                        {
-                            text: 'YAMAHA',
-                            value: 2
-                        },
-                        {
-                            text: 'REDHILL',
-                            value: 3
-                        },
-                        {
-                            text: 'EPIPHONE',
-                            value: 4
-                        },
-                        {
-                            text: 'CORT',
-                            value: 5
-                        },
-                        {
-                            text: 'CHARVEL',
-                            value: 6
-                        },
-                        {
-                            text: 'AIERSI',
-                            value: 7
-                        },
-                        {
-                            text: 'DEAN',
-                            value: 8
-                        },
-                        {
-                            text: 'FARIDA',
-                            value: 9
-                        },
-                        {
-                            text: 'GRETSCH GUITARS',
-                            value: 10
-                        },
-                    ]}
+                    items={brands}
+                    loading={loadingBrands}
+                    selectedBrands={selectedBrands}
+                    onClickCheckbox={toggleBrand}
                 />
             </Box>
         </Box>
