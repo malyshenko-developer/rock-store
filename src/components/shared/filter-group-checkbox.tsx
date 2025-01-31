@@ -10,7 +10,7 @@ interface Props {
     title: string;
     items: Brand[];
     limit: number;
-    loading?: Boolean;
+    loading?: boolean;
     selectedBrands: Set<number>;
     onClickCheckbox: (id: number) => void;
 }
