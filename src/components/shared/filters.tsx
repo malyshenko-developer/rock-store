@@ -13,7 +13,7 @@ import FilterSlider from './filter-slider';
 import FilterGroupCheckbox from './filter-group-checkbox';
 
 
-const Filters = () => {
+const FiltersContent = () => {
     const { 
         brands,
         loadingBrands,
@@ -70,5 +70,11 @@ const Filters = () => {
         </Box>
     )
 }
+
+const Filters = () => (
+    <React.Suspense>
+        <FiltersContent />
+    </React.Suspense>
+)
 
 export default Filters;
