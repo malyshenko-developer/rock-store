@@ -84,10 +84,45 @@ export const PRODUCTS = [
     brandId: 3,
   },
   {
-    name: 'YAMAHA PSR-SX900, без адаптера',
-    price: 279990,
-    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/6du/gxn/6ej/b0g/s88/0ok/soo/s0g/c/6dugxn6ejb0gs880oksoos0gc.jpeg',
-    categoryId: 2,
+    name: 'FLIGHT TUS ALYONA SHVETZ',
+    price: 5180,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/23o/at4/q9n/6ro/kow/sg0/8c8/484/k/23oat4q9n6rokowsg08c8484k.jpeg',
+    categoryId: 3,
+    brandId: 4,
+  },
+  {
+    name: 'FLIGHT TUS 21P BLACK FOREST',
+    price: 4600,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/ur2/64t/hca/io4/wog/08c/84o/o8k/ur264thcaio4wog08c84oo8k.jpeg',
+    categoryId: 3,
+    brandId: 4,
+  },
+  {
+    name: 'FLIGHT TUS ALYONA SHVETZ TOXIC',
+    price: 5180,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/e77/2ra/xpj/u8s/css/w0k/8kk/cks/c/e772raxpju8scssw0k8kkcksc.jpeg',
+    categoryId: 3,
+    brandId: 4,
+  },
+  {
+    name: 'Pearl RSJ465C/C31',
+    price: 59990,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/5dp/hng/swe/xc8/0gs/csc/0w4/kck/8/5dphngswexc80gscsc0w4kck8.jpg',
+    categoryId: 4,
+    brandId: 2,
+  },
+  {
+    name: 'TAMA ST52H6C-SEM STAGESTAR',
+    price: 136590,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/cgn/1pc/86j/5kw/kkc/8og/c0g/48s/c/cgn1pc86j5kwkkc8ogc0g48sc.jpeg',
+    categoryId: 4,
+    brandId: 5,
+  },
+  {
+    name: 'Pearl RS585C/C91',
+    price: 105990,
+    imageUrl: 'https://www.muztorg.ru/files/sized/f250x250/2v7/58d/f2o/ikg/0gw/ws4/84g/ggw/4/2v758df2oikg0gwws484gggw4.jpeg',
+    categoryId: 4,
     brandId: 2,
   }
 ];
@@ -97,16 +132,16 @@ export const BRANDS = [
     name: 'IBANEZ'
   },
   {
-    name: 'YAMAHA'
+    name: 'Pearl'
   },
   {
     name: 'KORG'
   },
   {
-    name: 'EPIPHONE'
+    name: 'Flight'
   },
   {
-    name: 'CORT'
+    name: 'TAMA'
   },
   {
     name: 'CHARVEL'

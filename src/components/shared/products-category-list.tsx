@@ -26,7 +26,7 @@ const ProductsCategoryList = (props: Props) => {
 
     const intersectionRef = React.useRef(null);
     const intersection = useIntersection(intersectionRef, {
-        threshold: 0.4,
+        threshold: 0.8,
     });
 
     const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);

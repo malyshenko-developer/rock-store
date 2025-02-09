@@ -2,8 +2,7 @@
 
 import React from 'react';
 
-import { useFilters } from '@/hooks/use-filters';
-import { useSyncFiltersWithUrl } from '@/hooks/use-sync-filters-with-url';
+import { useFilters, useSyncFiltersWithUrl } from '@/hooks';
 
 import { Box, Typography } from '@mui/material';
 import DiscountIcon from '@mui/icons-material/Discount';

@@ -2,35 +2,15 @@
 
 import { useCategoryStore } from '@/store/category';
 import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Category } from '@prisma/client';
 
-const CATEGORIES = [
-    {
-        id: 1,
-        name: 'Гитары',
-    },
-    {
-        id: 2,
-        name: 'Клавишные инструменты',
-    },
-    {
-        id: 3,
-        name: 'Укулеле',
-    },
-    {
-        id: 4,
-        name: 'Ударные инструменты',
-    },
-    {
-        id: 5,
-        name: 'Микрофоны и радиосистемы',
-    },
-    {
-        id: 6,
-        name: 'Наушники и гарнитуры',
-    }
-]
+interface Props {
+    items: Category[];
+}
 
-const Categories = () => {
+const Categories = (props: Props) => {
+    const { items } = props;
+
     const categoryActiveId = useCategoryStore((state) => state.activeId);
     const setCategoryActiveId = useCategoryStore((state) => state.setActiveId);
 
@@ -38,23 +18,21 @@ const Categories = () => {
         event: React.MouseEvent<HTMLElement>,
         newCategory: string | null,
     ) => {
-        const category = CATEGORIES.find((category) => category.name === newCategory);
-
-        if (category) {
-            setCategoryActiveId(category.id);
+        if (newCategory !== null) {
+            setCategoryActiveId(Number(newCategory));
         }
     }
 
     return (
         <Box bgcolor={'background.secondary'} borderRadius={'10px'} display={'inline-flex'}>
             <ToggleButtonGroup
-                value={CATEGORIES[categoryActiveId]}
+                value={categoryActiveId}
                 exclusive
                 onChange={handleChangeCategory}
             >
                 {
-                    CATEGORIES.map((category, index) => (
-                        <ToggleButton key={index} value={category} href={`/#${category.name}`}>
+                    items.map((category) => (
+                        <ToggleButton key={category.id} value={category.id} href={`/#${category.name}`}>
                             {category.name}
                         </ToggleButton>
                     ))

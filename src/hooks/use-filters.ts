@@ -1,5 +1,4 @@
-import { useFilterBrands } from "./use-filter-brands"
-import { useFilterPrices } from "./use-filter-prices";
+import { useFilterBrands, useFilterPrices } from "./";
 
 export const useFilters = () => {
     const filterBrands = useFilterBrands();
